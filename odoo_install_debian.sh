@@ -90,6 +90,16 @@ su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 echo -e "\n---- Install packages ----"
 apt-get install libjpeg-dev curl wget git python-pip gdebi-core python-dev libxml2-dev libxslt1-dev zlib1g-dev libldap2-dev libsasl2-dev node-clean-css node-less python-gevent -y >> ./install_log
 
+echo -e "\n---- Install py3o ----"
+apt-get install libreoffice-writer
+pip install py3o.template py3o.formats py3o.formats py3o.fusion service-identity py3o.renderserver
+apt-get install default-jre ure libreoffice-java-common libreoffice-writer fonts-symbola
+
+echo -e "\n---- Install Geospatial dependences ----"
+apt-get install postgis
+pip install shapely==1.6b2
+pip install geojson
+
 
 
 
